@@ -30,6 +30,7 @@ func _process(delta):
 			$Sprite.scale.x = x
 	else:
 		time_elapsed = 0
+		$Sprite.position.y = 0
 
 func chaise():
 	var player = $"..".player

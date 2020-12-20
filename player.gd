@@ -31,6 +31,7 @@ func _process(delta):
 			$Sprite.scale.x = x
 	else:
 		time_elapsed = 0
+		$Sprite.position.y = 0
 	
 	if !in_business:
 		move_and_slide(vel)

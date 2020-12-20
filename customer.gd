@@ -28,7 +28,8 @@ func _process(delta):
 		$Sprite.position.y = -8 * abs(sin(time_elapsed * 10))
 	if target:
 		$Sprite.scale.x = sign(target.x - position.x)
-		
+	else:
+		$Sprite.position.y = 0
 	
 	# move to a random position
 	if !target_reached:
