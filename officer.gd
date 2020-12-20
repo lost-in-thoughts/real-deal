@@ -34,8 +34,10 @@ func idle():
 
 func start_chaising():
 	print("start chaising")
+	$chase_indicator.visible = true
 	chaising = true
 
 func stop_chaising():
 	print("stop chaising")
+	$chase_indicator.visible = false
 	chaising = false
