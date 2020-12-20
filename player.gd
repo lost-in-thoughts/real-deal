@@ -1,5 +1,10 @@
 extends KinematicBody2D
 
+var in_business = false
+var active_customer = null
+var cash = 0
+var bags = 10
+
 func _ready():
 	pass
 
@@ -18,4 +23,34 @@ func _process(delta):
 	var dir = Vector2(horizontal, vertical) * diagonal_scale
 	var vel = dir * speed
 	
-	move_and_slide(vel)
+	if !in_business:
+		move_and_slide(vel)
+		
+		if action:
+			for customer in $"..".customers:
+				if customer.ready_for_business:
+					if $"area".overlaps_area(customer.get_node("area")):
+						start_business(customer)
+
+func start_business(customer):
+	print("start business")
+	in_business = true
+	$business_indicator.visible = true
+	active_customer = customer
+	active_customer.start_business()
+	$Timer.start()
+
+func stop_business():
+	print("stop business")
+	in_business = false
+	active_customer.stop_business()
+	active_customer = null
+	$business_indicator.visible = false
+	cash += 10
+	bags -= 1
+
+func _on_Timer_timeout():
+	stop_business()
+
+func win_condition():
+	return bags <= 0
