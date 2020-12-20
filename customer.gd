@@ -8,6 +8,7 @@ var target = null
 var target_reached
 var served = false
 var probability
+var in_business = false
 
 func _ready():
 	$"..".add_customer(self)
@@ -47,7 +48,7 @@ func _process(delta):
 			time_elapsed = 0
 
 	# wait for the business to start
-	elif time_elapsed > waiting_time and ready_for_business:
+	elif time_elapsed > waiting_time and ready_for_business and !in_business:
 		cancel_business()
 		time_elapsed = 0
 		target = null
@@ -66,11 +67,14 @@ func stop_ready_for_business():
 	$"ready_for_business_indicator".visible = false
 
 func start_business():
+	in_business = true
 	$"ready_for_business_indicator".visible = false
 
 func stop_business():
 	served = true
+	in_business = false
 	stop_ready_for_business()
 
 func cancel_business():
+	in_business = false
 	stop_ready_for_business()
