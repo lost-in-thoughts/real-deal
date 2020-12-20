@@ -25,4 +25,5 @@ func loose():
 
 func win():
 	GameState.win = true
+	GameState.increase_level()
 	get_tree().change_scene("res://menu.tscn")

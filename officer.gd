@@ -24,7 +24,7 @@ func chaise():
 	if $"bust_area".overlaps_area(player.get_node("area")):
 		$"..".loose()
 	
-	var speed = 50
+	var speed = 40
 	var dir = (player.position - position).normalized()
 	var vel = dir * speed
 	move_and_slide(vel)
