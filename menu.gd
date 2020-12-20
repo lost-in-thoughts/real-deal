@@ -5,7 +5,7 @@ func _ready():
 		if GameState.win:
 			$"win_or_loose".text = "you won!"
 		else:
-			$"win_or_loose".text = "you lost!"
+			$"win_or_loose".text = "you lost! the officer has busted you"
 
 func _process(delta):
 	pass
