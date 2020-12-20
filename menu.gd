@@ -1,7 +1,11 @@
 extends Node2D
 
 func _ready():
-	pass
+	if GameState.win != null:
+		if GameState.win:
+			$"win_or_loose".text = "you won!"
+		else:
+			$"win_or_loose".text = "you lost!"
 
 func _process(delta):
 	pass

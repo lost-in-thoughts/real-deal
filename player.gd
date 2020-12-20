@@ -2,8 +2,7 @@ extends KinematicBody2D
 
 var in_business = false
 var active_customer = null
-var cash = 0
-var bags = 10
+var bags = 1
 
 func _ready():
 	$"..".add_player(self)
@@ -31,6 +30,8 @@ func _process(delta):
 				if customer.ready_for_business:
 					if $"area".overlaps_area(customer.get_node("area")):
 						start_business(customer)
+	
+	win_condition()
 
 func start_business(customer):
 	print("start business")
@@ -46,11 +47,11 @@ func stop_business():
 	active_customer.stop_business()
 	active_customer = null
 	$business_indicator.visible = false
-	cash += 10
 	bags -= 1
 
 func _on_Timer_timeout():
 	stop_business()
 
 func win_condition():
-	return bags <= 0
+	if bags <= 0:
+		$"..".win()

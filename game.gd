@@ -18,3 +18,11 @@ func add_officer(officer):
 
 func add_player(p):
 	player = p
+
+func loose():
+	GameState.win = false
+	get_tree().change_scene("res://menu.tscn")
+
+func win():
+	GameState.win = true
+	get_tree().change_scene("res://menu.tscn")
