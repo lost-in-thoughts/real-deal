@@ -1,17 +1,44 @@
-extends Node2D
+extends KinematicBody2D
 
-const probability = 0.01
+const probability = 0.001
 var ready_for_business = false
+var idle_time
+var waiting_time
+var time_elapsed = 0
+var target = null
+var target_reached
 
 func _ready():
 	$"..".add_customer(self)
 	$Sprite.texture = load("res://customer/character0" + str(randi()%8+1)  + ".png")
 	print("texture set")
+	idle_time = 1 + randf() * 2
+	waiting_time = 5 + randf() * 8
 
 func _process(delta):
-	if !ready_for_business && should_wait():
-		start_ready_for_business()
+	time_elapsed += delta
+	
+	# move to a random position
+	if !target_reached:
+		if target == null:
+			target = Vector2(randf() * 1024, 80 + randf() * 432)
+		move_and_slide((target - position).normalized() * 100)
+		if target.distance_to(position) < 10:
+			target_reached = true
+			time_elapsed = 0
 
+	# wait random before the business starts
+	elif time_elapsed > idle_time and !ready_for_business:
+		start_ready_for_business()
+		time_elapsed = 0
+		
+	# wait for the business to start
+	elif time_elapsed > waiting_time and ready_for_business:
+		stop_business()
+		time_elapsed = 0
+		target = null
+		target_reached = false
+		
 func should_wait():
 	return randf() < probability
 
@@ -23,4 +50,5 @@ func start_business():
 	$"ready_for_business_indicator".visible = false
 
 func stop_business():
+	$"ready_for_business_indicator".visible = false	
 	ready_for_business = false
