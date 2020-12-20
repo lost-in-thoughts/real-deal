@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var in_business = false
 var active_customer = null
+var time_elapsed = 0
 
 func _ready():
 	$"..".add_player(self)
@@ -20,6 +21,16 @@ func _process(delta):
 	var diagonal_scale = (1/sqrt(2)) if (horizontal != 0 && vertical != 0) else 1
 	var dir = Vector2(horizontal, vertical) * diagonal_scale
 	var vel = dir * speed
+	
+	# juice
+	if dir.length() > 0:
+		time_elapsed += delta
+		$Sprite.position.y = -8 * abs(sin(time_elapsed * 10))
+		var x = sign(dir.x)
+		if x != 0:
+			$Sprite.scale.x = x
+	else:
+		time_elapsed = 0
 	
 	if !in_business:
 		move_and_slide(vel)

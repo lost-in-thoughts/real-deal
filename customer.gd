@@ -20,6 +20,13 @@ func _ready():
 func _process(delta):
 	time_elapsed += delta
 	
+	# juice
+	if !target_reached:
+		$Sprite.position.y = -8 * abs(sin(time_elapsed * 10))
+	if target:
+		$Sprite.scale.x = sign(target.x - position.x)
+		
+	
 	# move to a random position
 	if !target_reached:
 		if target == null:
