@@ -9,7 +9,7 @@ func _process(delta):
 	var player = $"..".player
 	if player:
 		if $"area".overlaps_area(player.get_node("area")):
-			if !chaising && player.in_business:
+			if !chaising and player.in_business:
 				start_chaising()
 		elif chaising:
 			stop_chaising()
@@ -21,8 +21,13 @@ func _process(delta):
 
 func chaise():
 	var player = $"..".player
+	if $"bust_area".overlaps_area(player.get_node("area")):
+		print("busted")
+	
+	var speed = 50
 	var dir = (player.position - position).normalized()
-	move_and_slide(dir)
+	var vel = dir * speed
+	move_and_slide(vel)
 
 func idle():
 	pass
