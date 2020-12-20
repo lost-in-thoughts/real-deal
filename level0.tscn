@@ -18,6 +18,41 @@ region_rect = Rect2( 1024, 512, 0, 0 )
 [node name="customer" parent="." instance=ExtResource( 4 )]
 
 [node name="customer2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 89, 120 )
+
+[node name="customer3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 629.74, 135.462 )
+
+[node name="customer4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 909.74, 375.462 )
+is_interested = false
+
+[node name="customer5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 869.74, 135.462 )
+is_interested = false
+
+[node name="customer6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701.74, 391.462 )
+is_interested = false
+
+[node name="customer7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 733.74, 191.462 )
+is_interested = false
+
+[node name="customer8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 585.976, 393.265 )
+is_interested = false
+
+[node name="customer9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 64.1597, 440.549 )
+is_interested = false
+
+[node name="customer10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 184.904, 391.576 )
+is_interested = false
+
+[node name="customer11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 358.843, 145.866 )
+is_interested = false
 
 [node name="hud" type="Node2D" parent="."]
