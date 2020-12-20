@@ -8,7 +8,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	pass
+	win_condition()
 
 func add_customer(customer):
 	customers.push_back(customer)
@@ -27,3 +27,9 @@ func win():
 	GameState.win = true
 	GameState.increase_level()
 	get_tree().change_scene("res://menu.tscn")
+
+func win_condition():
+	for customer in customers:
+		if !customer.served:
+			return
+	win()

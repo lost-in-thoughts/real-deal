@@ -7,6 +7,7 @@ var waiting_time
 var time_elapsed = 0
 var target = null
 var target_reached
+var served = false
 
 func _ready():
 	$"..".add_customer(self)
@@ -34,7 +35,7 @@ func _process(delta):
 		
 	# wait for the business to start
 	elif time_elapsed > waiting_time and ready_for_business:
-		stop_business()
+		cancel_business()
 		time_elapsed = 0
 		target = null
 		target_reached = false
@@ -44,11 +45,19 @@ func should_wait():
 
 func start_ready_for_business():
 	ready_for_business = true
-	$"ready_for_business_indicator".visible = true
+	if !served:
+		$"ready_for_business_indicator".visible = true
+
+func stop_ready_for_business():
+	ready_for_business = false
+	$"ready_for_business_indicator".visible = false
 
 func start_business():
 	$"ready_for_business_indicator".visible = false
 
 func stop_business():
-	$"ready_for_business_indicator".visible = false	
-	ready_for_business = false
+	served = true
+	stop_ready_for_business()
+
+func cancel_business():
+	stop_ready_for_business()
