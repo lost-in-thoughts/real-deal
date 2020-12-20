@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
-const probability = 0.001
 var ready_for_business = false
 var idle_time
 var waiting_time
 var time_elapsed = 0
 var target = null
 var target_reached
+var probability
 
 func _ready():
 	$"..".add_customer(self)
@@ -14,6 +14,7 @@ func _ready():
 	print("texture set")
 	idle_time = 1 + randf() * 2
 	waiting_time = 5 + randf() * 8
+	probability = 0.1 + randf() * 0.2
 
 func _process(delta):
 	time_elapsed += delta
@@ -29,9 +30,14 @@ func _process(delta):
 
 	# wait random before the business starts
 	elif time_elapsed > idle_time and !ready_for_business:
-		start_ready_for_business()
-		time_elapsed = 0
-		
+		if randf() < probability:
+			start_ready_for_business()
+			time_elapsed = 0
+		else:
+			target = null
+			target_reached = false
+			time_elapsed = 0
+
 	# wait for the business to start
 	elif time_elapsed > waiting_time and ready_for_business:
 		stop_business()

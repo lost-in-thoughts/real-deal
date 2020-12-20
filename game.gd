@@ -5,6 +5,7 @@ var officers = []
 var player = null
 
 func _ready():
+	randomize()
 	pass
 
 func _process(delta):
