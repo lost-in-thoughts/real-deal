@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://customer.gd" type="Script" id=2]
+[ext_resource path="res://street.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="game" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
-scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+offset = Vector2( 512, 256 )
 region_rect = Rect2( 1024, 512, 0, 0 )
 
 [node name="player" type="KinematicBody2D" parent="."]
