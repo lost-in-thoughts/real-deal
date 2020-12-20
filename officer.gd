@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var chaising = false
 var target = null
+var time_elapsed = 0
 
 func _ready():
 	$"..".add_officer(self)
@@ -19,6 +20,16 @@ func _process(delta):
 		chaise()
 	else:
 		idle()
+		
+	# juice
+	if target:
+		time_elapsed += delta
+		$Sprite.position.y = -8 * abs(sin(time_elapsed * 10))
+		var x = sign(target.x - position.x)
+		if x != 0:
+			$Sprite.scale.x = x
+	else:
+		time_elapsed = 0
 
 func chaise():
 	var player = $"..".player
