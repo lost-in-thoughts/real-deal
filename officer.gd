@@ -22,7 +22,7 @@ func _process(delta):
 func chaise():
 	var player = $"..".player
 	if $"bust_area".overlaps_area(player.get_node("area")):
-		print("busted")
+		$"..".loose()
 	
 	var speed = 50
 	var dir = (player.position - position).normalized()

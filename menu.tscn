@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
-[ext_resource path="res://font/GANG BANG CRIME.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://font/STREET demo.otf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -22,33 +22,35 @@ __meta__ = {
 margin_right = 1024.0
 margin_bottom = 100.0
 custom_fonts/font = SubResource( 1 )
-text = "Real Deal"
+text = "REAL DEAL"
 align = 1
 valign = 1
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="win_or_loose" type="Label" parent="."]
-margin_top = 147.462
+margin_top = 137.948
 margin_right = 1024.0
-margin_bottom = 247.462
+margin_bottom = 237.948
 custom_fonts/font = SubResource( 1 )
-text = "win or loose"
 align = 1
 valign = 1
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="click_to_play" type="Label" parent="."]
-margin_top = 409.087
+[node name="click" type="Label" parent="."]
+margin_top = 406.709
 margin_right = 1024.0
-margin_bottom = 509.087
+margin_bottom = 506.709
 custom_fonts/font = SubResource( 1 )
 text = "click to play"
 align = 1
 valign = 1
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

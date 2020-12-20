@@ -19,6 +19,10 @@ config/name="real-deal"
 run/main_scene="res://menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameState="*res://game_state.gd"
+
 [display]
 
 window/size/height=512
