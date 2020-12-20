@@ -3,11 +3,13 @@ extends KinematicBody2D
 var in_business = false
 var active_customer = null
 var time_elapsed = 0
+var time_since_start = 0
 
 func _ready():
 	$"..".add_player(self)
 
 func _process(delta):
+	time_since_start += delta
 	var speed = 100
 	
 	var right = Input.is_action_pressed("ui_right")
@@ -33,6 +35,8 @@ func _process(delta):
 		time_elapsed = 0
 		$Sprite.position.y = 0
 	
+	$player_selection.modulate.a = (sin(time_since_start * 5) + 1) / 2
+	
 	if !in_business:
 		move_and_slide(vel)
 		
@@ -47,7 +51,6 @@ func _process(delta):
 			cancel_business()
 
 func start_business(customer):
-	print("start business")
 	in_business = true
 	$business_indicator.visible = true
 	active_customer = customer
@@ -55,14 +58,12 @@ func start_business(customer):
 	$Timer.start()
 
 func stop_business():
-	print("stop business")
 	in_business = false
 	active_customer.stop_business()
 	active_customer = null
 	$business_indicator.visible = false
 
 func cancel_business():
-	print("cancel business")
 	in_business = false
 	active_customer.cancel_business()
 	active_customer = null
