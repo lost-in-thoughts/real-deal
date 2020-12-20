@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://deal/deal0.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://deal/deal1.png" type="Texture" id=4]
 [ext_resource path="res://deal/deal3.png" type="Texture" id=5]
 [ext_resource path="res://deal/deal4.png" type="Texture" id=6]
+[ext_resource path="res://player_selection.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -50,5 +51,9 @@ position = Vector2( 0, -48 )
 scale = Vector2( 0.8, 0.8 )
 z_index = 2
 frames = SubResource( 4 )
+frame = 2
 playing = true
+
+[node name="player_selection" type="Sprite" parent="."]
+texture = ExtResource( 7 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
