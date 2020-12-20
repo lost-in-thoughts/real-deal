@@ -6,7 +6,7 @@ var cash = 0
 var bags = 10
 
 func _ready():
-	pass
+	$"..".add_player(self)
 
 func _process(delta):
 	var speed = 100
