@@ -31,7 +31,6 @@ visible = false
 position = Vector2( 0, -38 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="area" type="Area2D" parent="."]
