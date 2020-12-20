@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://customer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game.gd" type="Script" id=3]
+[ext_resource path="res://street.png" type="Texture" id=4]
 
 [node name="game" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="background" type="Sprite" parent="."]
-scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+offset = Vector2( 512, 256 )
 region_rect = Rect2( 1024, 512, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]

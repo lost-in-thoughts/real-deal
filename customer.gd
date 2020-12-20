@@ -5,6 +5,8 @@ var ready_for_business = false
 
 func _ready():
 	$"..".add_customer(self)
+	$Sprite.texture = load("res://customer/character0" + str(randi()%8+1)  + ".png")
+	print("texture set")
 
 func _process(delta):
 	if !ready_for_business && should_wait():
