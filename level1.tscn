@@ -28,6 +28,10 @@ position = Vector2( 826.498, 434.06 )
 [node name="customer3" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 142.704, 445.952 )
 
+[node name="customer4" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 280.652, 352.005 )
+is_interested = false
+
 [node name="officer" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 448.331, 156.975 )
 
