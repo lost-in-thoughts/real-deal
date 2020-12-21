@@ -13,7 +13,7 @@ var speed
 export(bool) var is_interested = true
 
 func _ready():
-	$"..".add_customer(self)
+	$"../..".add_customer(self)
 	$Sprite.texture = load("res://customer/character0" + str(randi()%8+1)  + ".png")
 	idle_time = 1 + randf() * 2
 	waiting_time = 5 + randf() * 8

@@ -13,17 +13,19 @@ texture = ExtResource( 2 )
 offset = Vector2( 512, 256 )
 region_rect = Rect2( 1024, 512, 0, 0 )
 
-[node name="player" parent="." instance=ExtResource( 5 )]
+[node name="YSort" type="YSort" parent="."]
 
-[node name="customer" parent="." instance=ExtResource( 4 )]
+[node name="player" parent="YSort" instance=ExtResource( 5 )]
 
-[node name="customer2" parent="." instance=ExtResource( 4 )]
+[node name="customer" parent="YSort" instance=ExtResource( 4 )]
+
+[node name="customer2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 89, 120 )
 
-[node name="customer3" parent="." instance=ExtResource( 4 )]
+[node name="customer3" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 629.74, 135.462 )
 
-[node name="customer4" parent="." instance=ExtResource( 4 )]
+[node name="customer4" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 909.74, 375.462 )
 is_interested = false
 
