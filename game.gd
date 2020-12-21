@@ -30,7 +30,12 @@ func win():
 	get_tree().change_scene("res://menu.tscn")
 
 func win_condition():
+	var count = 0
 	for customer in customers:
-		if !customer.served:
-			return
-	win()
+		if !customer.served && customer.is_interested:
+			count += 1
+	
+	$"hud/Label".text = str(count)
+	
+	if count == 0:
+		win()
