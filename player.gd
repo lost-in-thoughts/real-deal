@@ -40,10 +40,11 @@ func _process(delta):
 	if !in_business:
 		move_and_slide(vel)
 		
-		if action:
-			for customer in $"../..".customers:
-				if customer.ready_for_business && !customer.served:
-					if $"area".overlaps_area(customer.get_node("area")):
+		for customer in $"../..".customers:
+			if customer.ready_for_business && !customer.served:
+				if $"area".overlaps_area(customer.get_node("area")):
+					customer.get_node("customer_selection").modulate.a = 1
+					if action:
 						start_business(customer)
 						break
 	else:

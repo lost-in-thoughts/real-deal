@@ -23,6 +23,8 @@ func _ready():
 func _process(delta):
 	time_elapsed += delta
 	
+	$customer_selection.modulate.a *= 0.92
+	
 	# juice
 	if !target_reached:
 		$Sprite.position.y = -8 * abs(sin(time_elapsed * 10))
