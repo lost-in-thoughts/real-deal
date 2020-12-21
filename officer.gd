@@ -3,6 +3,8 @@ extends KinematicBody2D
 var chaising = false
 var target = null
 var time_elapsed = 0
+var time_elapsed_chaise = 0
+var max_chaise_time = 5
 
 func _ready():
 	$"../..".add_officer(self)
@@ -16,10 +18,12 @@ func _process(delta):
 		elif chaising:
 			stop_chaising()
 	
-	if chaising:
+	if chaising and time_elapsed_chaise < max_chaise_time:
 		chaise()
+		time_elapsed_chaise += delta
 	else:
 		idle()
+		time_elapsed_chaise += 0
 		
 	# juice
 	if target:
