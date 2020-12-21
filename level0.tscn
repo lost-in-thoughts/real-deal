@@ -18,6 +18,7 @@ region_rect = Rect2( 1024, 512, 0, 0 )
 [node name="player" parent="YSort" instance=ExtResource( 5 )]
 
 [node name="customer" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 353.194, 418.655 )
 
 [node name="customer2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 89, 120 )
