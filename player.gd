@@ -24,8 +24,9 @@ func _process(delta):
 	var dir = Vector2(horizontal, vertical) * diagonal_scale
 	var vel = dir * speed
 	
+	print(dir)
 	# juice
-	if dir.length() > 0:
+	if !in_business and dir.length() > 0.5:
 		time_elapsed += delta
 		$Sprite.position.y = -8 * abs(sin(time_elapsed * 10))
 		var x = sign(dir.x)

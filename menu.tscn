@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
-[ext_resource path="res://font/STREET demo.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://font/street cred.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://signs/signs0.png" type="Texture" id=3]
 [ext_resource path="res://signs/signs1.png" type="Texture" id=4]
 [ext_resource path="res://deal/deal2.png" type="Texture" id=5]
@@ -17,19 +17,19 @@
 [ext_resource path="res://font/ViceCitySans.otf" type="DynamicFontData" id=15]
 [ext_resource path="res://signs/signs3.png" type="Texture" id=16]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 70
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 24
 font_data = ExtResource( 15 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -64,7 +64,7 @@ __meta__ = {
 margin_right = 1024.0
 margin_bottom = 100.0
 rect_pivot_offset = Vector2( 517.574, 99.4212 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "REAL DEAL"
 align = 1
 valign = 1
@@ -78,7 +78,7 @@ margin_left = 0.526154
 margin_top = 138.429
 margin_right = 1024.53
 margin_bottom = 238.429
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 uppercase = true
@@ -91,7 +91,7 @@ margin_top = 408.544
 margin_right = 1024.0
 margin_bottom = 508.544
 rect_pivot_offset = Vector2( 436.796, 36.0179 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "press space to play"
 align = 1
 valign = 1
@@ -105,8 +105,9 @@ position = Vector2( 373.523, 130.723 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="ColorRect2" type="ColorRect" parent="tutorial"]
+margin_top = 50.0
 margin_right = 2.0
-margin_bottom = 295.0
+margin_bottom = 250.0
 color = Color( 0.764706, 0.752941, 0.752941, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -114,8 +115,9 @@ __meta__ = {
 
 [node name="ColorRect3" type="ColorRect" parent="tutorial"]
 margin_left = 336.0
+margin_top = 50.0
 margin_right = 338.0
-margin_bottom = 295.0
+margin_bottom = 250.0
 color = Color( 0.764706, 0.752941, 0.752941, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -127,8 +129,8 @@ margin_top = 224.49
 margin_right = 28.2107
 margin_bottom = 304.49
 rect_pivot_offset = Vector2( 280.792, 51.907 )
-custom_fonts/font = SubResource( 4 )
-text = "look for new Costumers"
+custom_fonts/font = SubResource( 3 )
+text = "look for new costumers"
 align = 1
 valign = 1
 __meta__ = {
@@ -141,7 +143,7 @@ margin_top = 220.821
 margin_right = 676.733
 margin_bottom = 300.821
 rect_pivot_offset = Vector2( 280.792, 51.907 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "watch out for police"
 align = 1
 valign = 1
@@ -155,7 +157,7 @@ margin_top = 21.5248
 margin_right = 349.054
 margin_bottom = 101.525
 rect_pivot_offset = Vector2( 254.191, 37.6891 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "make the deal"
 align = 1
 valign = 1
@@ -212,24 +214,22 @@ offset = Vector2( -105.3, 28.3684 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="tutorial"]
 position = Vector2( -87.0092, 56.8036 )
-frames = SubResource( 2 )
-frame = 1
+frames = SubResource( 4 )
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="tutorial"]
 position = Vector2( 165.928, 131.378 )
 scale = Vector2( 1.2329, 1.2329 )
-frames = SubResource( 2 )
+frames = SubResource( 4 )
 animation = "New Anim"
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="tutorial"]
 position = Vector2( 475.228, 87.8986 )
 scale = Vector2( 1.2329, 1.2329 )
-frames = SubResource( 2 )
+frames = SubResource( 4 )
 animation = "New Anim 1"
-frame = 1
 playing = true
 
 [node name="police" type="Sprite" parent="tutorial"]
