@@ -39,15 +39,15 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "New Anim 2",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "New Anim 1",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "New Anim 2",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ) ],
 "loop": true,
@@ -132,7 +132,7 @@ __meta__ = {
 }
 
 [node name="Coin" type="AnimatedSprite" parent="."]
-position = Vector2( 928.156, 298.7 )
+position = Vector2( 927.538, 297.464 )
 scale = Vector2( 2.4, 2.4 )
 frames = SubResource( 3 )
 animation = "New Anim 2"
@@ -180,7 +180,7 @@ margin_right = -104.289
 margin_bottom = 304.49
 rect_pivot_offset = Vector2( 280.792, 51.907 )
 custom_fonts/font = SubResource( 4 )
-text = "look for new costumers"
+text = "1. look for new costumers"
 align = 1
 valign = 1
 __meta__ = {
@@ -194,7 +194,7 @@ margin_right = 544.233
 margin_bottom = 300.821
 rect_pivot_offset = Vector2( 280.792, 51.907 )
 custom_fonts/font = SubResource( 4 )
-text = "watch out for police"
+text = "3. watch out for police"
 align = 1
 valign = 1
 __meta__ = {
@@ -202,13 +202,13 @@ __meta__ = {
 }
 
 [node name="click3" type="Label" parent="tutorial"]
-margin_left = -142.446
+margin_left = -143.218
 margin_top = 21.5248
-margin_right = 216.554
+margin_right = 215.782
 margin_bottom = 101.525
 rect_pivot_offset = Vector2( 254.191, 37.6891 )
 custom_fonts/font = SubResource( 4 )
-text = "make the deal"
+text = "2. make the deal"
 align = 1
 valign = 1
 __meta__ = {
@@ -222,7 +222,7 @@ margin_right = 870.304
 margin_bottom = 101.525
 rect_pivot_offset = Vector2( 254.191, 37.6891 )
 custom_fonts/font = SubResource( 4 )
-text = "collect all coins"
+text = "4. collect all coins"
 align = 1
 valign = 1
 __meta__ = {

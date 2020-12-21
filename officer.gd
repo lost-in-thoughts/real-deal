@@ -14,18 +14,18 @@ func _process(delta):
 	time_since_start += delta
 	var player = $"../..".player
 	if player:
-		if $"area".overlaps_area(player.get_node("area")):
+		if $"area".overlaps_area(player.get_node("area")) and time_elapsed_chaise < max_chaise_time:
 			if !chaising and player.in_business:
 				start_chaising()
 		elif chaising:
 			stop_chaising()
 	
-	if chaising and time_elapsed_chaise < max_chaise_time:
+	if chaising:
 		chaise()
 		time_elapsed_chaise += delta
 	else:
 		idle()
-		time_elapsed_chaise += 0
+		time_elapsed_chaise = 0
 		
 	# juice
 	if target:
@@ -39,10 +39,10 @@ func _process(delta):
 		$Sprite.position.y = 0
 	
 	if chaising:
-		if sin(time_since_start) > 0:
-			$"../../hud/ColorRect".color = Color(1, 0, 0, 0.2)
+		if sin(time_since_start * 3) > 0:
+			$"../../hud/ColorRect".color = Color(1, 0, 0, 0.15)
 		else:
-			$"../../hud/ColorRect".color = Color(0, 0, 1, 0.2)
+			$"../../hud/ColorRect".color = Color(0, 0, 1, 0.15)
 	else:
 		$"../../hud/ColorRect".color = Color(0, 0, 0, 0.0)
 
@@ -64,11 +64,9 @@ func idle():
 		target = null
 
 func start_chaising():
-	print("start chaising")
 	$chase_indicator.visible = true
 	chaising = true
 
 func stop_chaising():
-	print("stop chaising")
 	$chase_indicator.visible = false
 	chaising = false

@@ -14,8 +14,8 @@ func _ready():
 			$"click".text = "Press Space To Try Again"
 
 func _process(delta):
-	$"tutorial".visible = GameState.level == 0
-	$"Coin".visible = GameState.level != 0
+	if GameState.level == 1:
+		$"tutorial".visible = false
 
 func _input(event):
 	if event is InputEventKey:
