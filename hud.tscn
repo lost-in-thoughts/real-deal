@@ -22,13 +22,12 @@ animations = [ {
 } ]
 
 [node name="hud" type="Node2D"]
-position = Vector2( 866.932, 7.13524 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = -131.759
-margin_top = -22.6489
-margin_right = 68.2411
-margin_bottom = 77.3511
+margin_left = 733.241
+margin_top = 9.3511
+margin_right = 933.241
+margin_bottom = 109.351
 custom_fonts/font = SubResource( 1 )
 text = "20"
 align = 2
@@ -39,8 +38,16 @@ __meta__ = {
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 104.65, 27.3518 )
-scale = Vector2( 1.33447, 1.37163 )
+position = Vector2( 970, 57 )
+scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
-frame = 1
+frame = 5
 playing = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 512.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
