@@ -1,18 +1,90 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://font/street cred.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://signs/signs0.png" type="Texture" id=3]
+[ext_resource path="res://signs/signs1.png" type="Texture" id=4]
+[ext_resource path="res://deal/deal2.png" type="Texture" id=5]
+[ext_resource path="res://deal/deal3.png" type="Texture" id=6]
+[ext_resource path="res://player.png" type="Texture" id=7]
+[ext_resource path="res://deal/deal0.png" type="Texture" id=8]
+[ext_resource path="res://customer/character02.png" type="Texture" id=9]
+[ext_resource path="res://deal/deal4.png" type="Texture" id=10]
+[ext_resource path="res://deal/deal1.png" type="Texture" id=11]
+[ext_resource path="res://player_selection.png" type="Texture" id=12]
+[ext_resource path="res://police.png" type="Texture" id=13]
+[ext_resource path="res://signs/signs2.png" type="Texture" id=14]
+[ext_resource path="res://font/ViceCitySans.otf" type="DynamicFontData" id=15]
+[ext_resource path="res://signs/signs3.png" type="Texture" id=16]
+[ext_resource path="res://coins/coins10.png" type="Texture" id=17]
+[ext_resource path="res://coins/coins08.png" type="Texture" id=18]
+[ext_resource path="res://coins/coins05.png" type="Texture" id=19]
+[ext_resource path="res://coins/coins09.png" type="Texture" id=20]
+[ext_resource path="res://coins/coins07.png" type="Texture" id=21]
+[ext_resource path="res://coins/coins06.png" type="Texture" id=22]
+[ext_resource path="res://coins/coins11.png" type="Texture" id=23]
 
 [sub_resource type="DynamicFont" id=1]
-size = 42
+size = 70
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 15 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "New Anim 1",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "New Anim 2",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 15 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "New Anim 1",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 4.0
+} ]
 
 [node name="menu" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 512.0
+margin_left = 4.85386
+margin_top = 1.48685
+margin_right = 1028.86
+margin_bottom = 513.487
 color = Color( 0.133333, 0.133333, 0.133333, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -21,19 +93,9 @@ __meta__ = {
 [node name="title" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 100.0
+rect_pivot_offset = Vector2( 517.574, 99.4212 )
 custom_fonts/font = SubResource( 1 )
-text = "Real Deal"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="win_or_loose" type="Label" parent="."]
-margin_top = 137.948
-margin_right = 1024.0
-margin_bottom = 237.948
-custom_fonts/font = SubResource( 1 )
+text = "REAL DEAL"
 align = 1
 valign = 1
 uppercase = true
@@ -41,14 +103,177 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="win_or_loose" type="Label" parent="."]
+margin_left = 181.839
+margin_top = 166.256
+margin_right = 858.839
+margin_bottom = 329.256
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="click" type="Label" parent="."]
-margin_top = 406.709
+margin_top = 408.544
 margin_right = 1024.0
-margin_bottom = 506.709
-custom_fonts/font = SubResource( 1 )
-text = "Press Space To Play"
+margin_bottom = 508.544
+rect_pivot_offset = Vector2( 436.796, 36.0179 )
+custom_fonts/font = SubResource( 2 )
+text = "press space to play"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin" type="AnimatedSprite" parent="."]
+position = Vector2( 950.529, 252.977 )
+scale = Vector2( 2.4, 2.4 )
+frames = SubResource( 5 )
+animation = "New Anim 2"
+frame = 8
+playing = true
+
+[node name="tutorial" type="Node2D" parent="."]
+position = Vector2( 373.523, 130.723 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="ColorRect2" type="ColorRect" parent="tutorial"]
+margin_top = 50.0
+margin_right = 2.0
+margin_bottom = 250.0
+color = Color( 0.764706, 0.752941, 0.752941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="tutorial"]
+margin_left = 336.0
+margin_top = 50.0
+margin_right = 338.0
+margin_bottom = 250.0
+color = Color( 0.764706, 0.752941, 0.752941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="click2" type="Label" parent="tutorial"]
+margin_left = -330.789
+margin_top = 224.49
+margin_right = 28.2107
+margin_bottom = 304.49
+rect_pivot_offset = Vector2( 280.792, 51.907 )
+custom_fonts/font = SubResource( 3 )
+text = "look for new costumers"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="click4" type="Label" parent="tutorial"]
+margin_left = 317.733
+margin_top = 220.821
+margin_right = 676.733
+margin_bottom = 300.821
+rect_pivot_offset = Vector2( 280.792, 51.907 )
+custom_fonts/font = SubResource( 3 )
+text = "watch out for police"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="click3" type="Label" parent="tutorial"]
+margin_left = -9.94565
+margin_top = 21.5248
+margin_right = 349.054
+margin_bottom = 101.525
+rect_pivot_offset = Vector2( 254.191, 37.6891 )
+custom_fonts/font = SubResource( 3 )
+text = "make the deal"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player_selection" type="Sprite" parent="tutorial"]
+position = Vector2( -223.256, 182.734 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 12 )
+
+[node name="player_selection2" type="Sprite" parent="tutorial"]
+position = Vector2( 138.744, 214.734 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 12 )
+
+[node name="character02" type="Sprite" parent="tutorial"]
+position = Vector2( -66.1223, 178.823 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+offset = Vector2( -13.3934, -45.0947 )
+flip_h = true
+
+[node name="player" type="Sprite" parent="tutorial"]
+position = Vector2( -66.1223, 138.823 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -105.3, 28.3684 )
+
+[node name="character03" type="Sprite" parent="tutorial"]
+position = Vector2( 228.734, 261.005 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+offset = Vector2( -13.3934, -45.0947 )
+flip_h = true
+
+[node name="player2" type="Sprite" parent="tutorial"]
+position = Vector2( 296.201, 171.877 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -105.3, 28.3684 )
+
+[node name="player_selection3" type="Sprite" parent="tutorial"]
+position = Vector2( 563.042, 64.9331 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 12 )
+
+[node name="player3" type="Sprite" parent="tutorial"]
+position = Vector2( 720.5, 22.076 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -105.3, 28.3684 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="tutorial"]
+position = Vector2( -87.0092, 56.8036 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="tutorial"]
+position = Vector2( 165.928, 131.378 )
+scale = Vector2( 1.2329, 1.2329 )
+frames = SubResource( 4 )
+animation = "New Anim"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="tutorial"]
+position = Vector2( 475.228, 87.8986 )
+scale = Vector2( 1.2329, 1.2329 )
+frames = SubResource( 4 )
+animation = "New Anim 1"
+frame = 1
+playing = true
+
+[node name="police" type="Sprite" parent="tutorial"]
+position = Vector2( 474.215, 169.289 )
+scale = Vector2( 1.8, 1.8 )
+texture = ExtResource( 13 )
