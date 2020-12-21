@@ -14,28 +14,30 @@ texture = ExtResource( 2 )
 offset = Vector2( 512, 256 )
 region_rect = Rect2( 1024, 512, 0, 0 )
 
-[node name="player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 709.653, 165.3 )
-
-[node name="customer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 512.548, 165.3 )
-
-[node name="customer5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 126.055, 197.3 )
-
-[node name="customer2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 932.337, 404.06 )
-
-[node name="customer3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 512.548, 445.952 )
-
-[node name="customer4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 376.978, 384.06 )
-
 [node name="hud" type="Node2D" parent="."]
 
-[node name="officer" parent="." instance=ExtResource( 3 )]
+[node name="YSort" type="YSort" parent="."]
+
+[node name="player" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 709.653, 165.3 )
+
+[node name="customer" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 512.548, 165.3 )
+
+[node name="customer5" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 126.055, 197.3 )
+
+[node name="customer2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 932.337, 404.06 )
+
+[node name="customer3" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 512.548, 445.952 )
+
+[node name="customer4" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 376.978, 384.06 )
+
+[node name="officer" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 230.815, 326.923 )
 
-[node name="officer2" parent="." instance=ExtResource( 3 )]
+[node name="officer2" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 741.653, 384.06 )

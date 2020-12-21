@@ -7,10 +7,10 @@ var time_elapsed_chaise = 0
 var max_chaise_time = 5
 
 func _ready():
-	$"..".add_officer(self)
+	$"../..".add_officer(self)
 	
 func _process(delta):
-	var player = $"..".player
+	var player = $"../..".player
 	if player:
 		if $"area".overlaps_area(player.get_node("area")):
 			if !chaising and player.in_business:
@@ -37,9 +37,9 @@ func _process(delta):
 		$Sprite.position.y = 0
 
 func chaise():
-	var player = $"..".player
+	var player = $"../..".player
 	if $"bust_area".overlaps_area(player.get_node("area")):
-		$"..".loose()
+		$"../..".loose()
 	
 	var speed = 50
 	var dir = (player.position - position).normalized()

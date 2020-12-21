@@ -6,7 +6,7 @@ var time_elapsed = 0
 var time_since_start = 0
 
 func _ready():
-	$"..".add_player(self)
+	$"../..".add_player(self)
 
 func _process(delta):
 	time_since_start += delta
@@ -41,7 +41,7 @@ func _process(delta):
 		move_and_slide(vel)
 		
 		if action:
-			for customer in $"..".customers:
+			for customer in $"../..".customers:
 				if customer.ready_for_business && !customer.served:
 					if $"area".overlaps_area(customer.get_node("area")):
 						start_business(customer)

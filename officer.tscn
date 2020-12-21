@@ -6,12 +6,13 @@
 [ext_resource path="res://signs/signs2.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 9.49928
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 187.174
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 14.4735
+radius = 6.89912
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -45,6 +46,7 @@ shape = SubResource( 3 )
 visible = false
 position = Vector2( 3, -50 )
 scale = Vector2( 0.6, 0.6 )
+z_index = 1
 frames = SubResource( 4 )
 frame = 1
 playing = true
