@@ -4,14 +4,14 @@ func _ready():
 	if GameState.win != null:
 		if GameState.win:
 			if GameState.end():
-				$"win_or_loose".text = "everyone is high! thank you for playing"
-				$"click".text = "press space to play again"
+				$"win_or_loose".text = "Everyone Is High! Thank You For Playing"
+				$"click".text = "Press Space To Play Again"
 			else:
-				$"win_or_loose".text = "you won! lets go to the neighborhood"
-				$"click".text = "press space to play next level"
+				$"win_or_loose".text = "You won! Lets Go To The Neighborhood"
+				$"click".text = "Press Space To Play Next Level"
 		else:
-			$"win_or_loose".text = "you lost! the officer has busted you"
-			$"click".text = "press space to try again"
+			$"win_or_loose".text = "You Lost! The Officer Has Busted You"
+			$"click".text = "Press Space To Try Again"
 
 func _process(delta):
 	pass

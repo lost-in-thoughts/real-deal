@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://street.png" type="Texture" id=2]
+[ext_resource path="res://font/street cred.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://customer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+font_data = ExtResource( 3 )
 
 [node name="level0" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,3 +33,20 @@ position = Vector2( 909.74, 375.462 )
 is_interested = false
 
 [node name="hud" type="Node2D" parent="."]
+position = Vector2( 866.932, 7.13524 )
+
+[node name="Label" type="Label" parent="hud"]
+margin_left = -48.7576
+margin_top = -15.4597
+margin_right = 151.242
+margin_bottom = 84.5403
+custom_fonts/font = SubResource( 1 )
+text = "5"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="hud"]
