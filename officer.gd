@@ -12,18 +12,18 @@ func _ready():
 func _process(delta):
 	var player = $"../..".player
 	if player:
-		if $"area".overlaps_area(player.get_node("area")):
+		if $"area".overlaps_area(player.get_node("area")) and time_elapsed_chaise < max_chaise_time:
 			if !chaising and player.in_business:
 				start_chaising()
 		elif chaising:
 			stop_chaising()
 	
-	if chaising and time_elapsed_chaise < max_chaise_time:
+	if chaising:
 		chaise()
 		time_elapsed_chaise += delta
 	else:
 		idle()
-		time_elapsed_chaise += 0
+		time_elapsed_chaise = 0
 		
 	# juice
 	if target:
