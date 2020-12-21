@@ -41,7 +41,7 @@ __meta__ = {
 position = Vector2( 970, 57 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
