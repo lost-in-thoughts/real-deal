@@ -32,7 +32,7 @@ font_data = ExtResource( 2 )
 size = 32
 font_data = ExtResource( 15 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -55,11 +55,11 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 24
 font_data = ExtResource( 15 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -134,9 +134,9 @@ __meta__ = {
 [node name="Coin" type="AnimatedSprite" parent="."]
 position = Vector2( 950.529, 252.977 )
 scale = Vector2( 2.4, 2.4 )
-frames = SubResource( 5 )
+frames = SubResource( 3 )
 animation = "New Anim 2"
-frame = 8
+frame = 12
 playing = true
 
 [node name="tutorial" type="Node2D" parent="."]
@@ -168,7 +168,7 @@ margin_top = 224.49
 margin_right = 28.2107
 margin_bottom = 304.49
 rect_pivot_offset = Vector2( 280.792, 51.907 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "look for new costumers"
 align = 1
 valign = 1
@@ -182,7 +182,7 @@ margin_top = 220.821
 margin_right = 676.733
 margin_bottom = 300.821
 rect_pivot_offset = Vector2( 280.792, 51.907 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "watch out for police"
 align = 1
 valign = 1
@@ -196,7 +196,7 @@ margin_top = 21.5248
 margin_right = 349.054
 margin_bottom = 101.525
 rect_pivot_offset = Vector2( 254.191, 37.6891 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "make the deal"
 align = 1
 valign = 1
@@ -253,14 +253,14 @@ offset = Vector2( -105.3, 28.3684 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="tutorial"]
 position = Vector2( -87.0092, 56.8036 )
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="tutorial"]
 position = Vector2( 165.928, 131.378 )
 scale = Vector2( 1.2329, 1.2329 )
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 animation = "New Anim"
 frame = 1
 playing = true
@@ -268,7 +268,7 @@ playing = true
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="tutorial"]
 position = Vector2( 475.228, 87.8986 )
 scale = Vector2( 1.2329, 1.2329 )
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 animation = "New Anim 1"
 frame = 1
 playing = true

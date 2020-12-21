@@ -1,7 +1,7 @@
 extends Node2D
 
 var win = null
-var level = 2
+var level = 0
 var levels_count = 3
 
 func increase_level():
