@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://font/street cred.ttf" type="DynamicFontData" id=2]
@@ -16,6 +16,13 @@
 [ext_resource path="res://signs/signs2.png" type="Texture" id=14]
 [ext_resource path="res://font/ViceCitySans.otf" type="DynamicFontData" id=15]
 [ext_resource path="res://signs/signs3.png" type="Texture" id=16]
+[ext_resource path="res://coins/coins10.png" type="Texture" id=17]
+[ext_resource path="res://coins/coins08.png" type="Texture" id=18]
+[ext_resource path="res://coins/coins05.png" type="Texture" id=19]
+[ext_resource path="res://coins/coins09.png" type="Texture" id=20]
+[ext_resource path="res://coins/coins07.png" type="Texture" id=21]
+[ext_resource path="res://coins/coins06.png" type="Texture" id=22]
+[ext_resource path="res://coins/coins11.png" type="Texture" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -24,6 +31,29 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 15 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "New Anim 1",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "New Anim 2",
+"speed": 10.0
+} ]
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -51,9 +81,9 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 4.30521
+margin_left = 4.85386
 margin_top = 1.48685
-margin_right = 1028.31
+margin_right = 1028.86
 margin_bottom = 513.487
 color = Color( 0.133333, 0.133333, 0.133333, 1 )
 __meta__ = {
@@ -74,13 +104,14 @@ __meta__ = {
 }
 
 [node name="win_or_loose" type="Label" parent="."]
-margin_left = 0.526154
-margin_top = 138.429
-margin_right = 1024.53
-margin_bottom = 238.429
+margin_left = 181.839
+margin_top = 166.256
+margin_right = 858.839
+margin_bottom = 329.256
 custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
+autowrap = true
 uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -99,6 +130,14 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Coin" type="AnimatedSprite" parent="."]
+position = Vector2( 950.529, 252.977 )
+scale = Vector2( 2.4, 2.4 )
+frames = SubResource( 5 )
+animation = "New Anim 2"
+frame = 8
+playing = true
 
 [node name="tutorial" type="Node2D" parent="."]
 position = Vector2( 373.523, 130.723 )
@@ -189,7 +228,7 @@ texture = ExtResource( 7 )
 offset = Vector2( -105.3, 28.3684 )
 
 [node name="character03" type="Sprite" parent="tutorial"]
-position = Vector2( 227.925, 259.386 )
+position = Vector2( 228.734, 261.005 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 9 )
 offset = Vector2( -13.3934, -45.0947 )
@@ -215,6 +254,7 @@ offset = Vector2( -105.3, 28.3684 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="tutorial"]
 position = Vector2( -87.0092, 56.8036 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="tutorial"]
@@ -222,7 +262,7 @@ position = Vector2( 165.928, 131.378 )
 scale = Vector2( 1.2329, 1.2329 )
 frames = SubResource( 4 )
 animation = "New Anim"
-frame = 4
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="tutorial"]
@@ -230,6 +270,7 @@ position = Vector2( 475.228, 87.8986 )
 scale = Vector2( 1.2329, 1.2329 )
 frames = SubResource( 4 )
 animation = "New Anim 1"
+frame = 1
 playing = true
 
 [node name="police" type="Sprite" parent="tutorial"]
