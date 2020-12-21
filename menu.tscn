@@ -39,11 +39,6 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "New Anim 1",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 19 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "New Anim 2",
@@ -53,6 +48,11 @@ animations = [ {
 "loop": true,
 "name": "New Anim",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "New Anim 1",
+"speed": 3.0
 } ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -66,15 +66,15 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "New Anim 1",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "New Anim",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "New Anim 1",
+"speed": 3.0
 } ]
 
 [node name="menu" type="Node2D"]
@@ -138,7 +138,7 @@ position = Vector2( 930.009, 275.399 )
 scale = Vector2( 2.4, 2.4 )
 frames = SubResource( 3 )
 animation = "New Anim 2"
-frame = 14
+frame = 5
 playing = true
 
 [node name="tutorial" type="Node2D" parent="."]
@@ -281,7 +281,6 @@ offset = Vector2( -105.3, 28.3684 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="tutorial"]
 position = Vector2( -219.509, 56.8036 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="tutorial"]
@@ -289,7 +288,6 @@ position = Vector2( 33.428, 131.378 )
 scale = Vector2( 1.2329, 1.2329 )
 frames = SubResource( 5 )
 animation = "New Anim"
-frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="tutorial"]
@@ -297,7 +295,6 @@ position = Vector2( 342.728, 87.8986 )
 scale = Vector2( 1.2329, 1.2329 )
 frames = SubResource( 5 )
 animation = "New Anim 1"
-frame = 1
 playing = true
 
 [node name="police" type="Sprite" parent="tutorial"]
