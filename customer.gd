@@ -42,7 +42,7 @@ func _process(delta):
 
 	# wait random before the business starts
 	elif time_elapsed > idle_time and !ready_for_business:
-		if randf() < probability:
+		if should_wait():
 			start_ready_for_business()
 			time_elapsed = 0
 		else:
@@ -60,7 +60,9 @@ func _process(delta):
 	$"Sprite/rubin_eyes".visible = served
 		
 func should_wait():
-	return randf() < probability
+	var extra = 1 - 1 / (1 + time_elapsed * 0.1)
+	var prob = probability + extra * int(is_interested)
+	return randf() < prob
 
 func start_ready_for_business():
 	ready_for_business = true
