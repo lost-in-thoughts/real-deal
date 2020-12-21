@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://font/STREET demo.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://tut01.png" type="Texture" id=3]
+[ext_resource path="res://tut02.png" type="Texture" id=4]
+[ext_resource path="res://tut03.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -11,7 +14,8 @@ font_data = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
+margin_left = 0.480835
+margin_right = 1024.48
 margin_bottom = 512.0
 color = Color( 0.133333, 0.133333, 0.133333, 1 )
 __meta__ = {
@@ -21,6 +25,7 @@ __meta__ = {
 [node name="title" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 100.0
+rect_pivot_offset = Vector2( 517.574, 99.4212 )
 custom_fonts/font = SubResource( 1 )
 text = "REAL DEAL"
 align = 1
@@ -31,9 +36,9 @@ __meta__ = {
 }
 
 [node name="win_or_loose" type="Label" parent="."]
-margin_top = 137.948
+margin_top = 137.467
 margin_right = 1024.0
-margin_bottom = 237.948
+margin_bottom = 237.467
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
@@ -54,3 +59,18 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="tut02" type="Sprite" parent="."]
+position = Vector2( 511.241, 200.259 )
+scale = Vector2( 0.528837, 0.528837 )
+texture = ExtResource( 4 )
+
+[node name="tut03" type="Sprite" parent="."]
+position = Vector2( 817.606, 296.077 )
+scale = Vector2( 0.393021, 0.393021 )
+texture = ExtResource( 5 )
+
+[node name="tut01" type="Sprite" parent="."]
+position = Vector2( 193.732, 281.438 )
+scale = Vector2( 0.393021, 0.393021 )
+texture = ExtResource( 3 )
