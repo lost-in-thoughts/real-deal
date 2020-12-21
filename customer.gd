@@ -57,6 +57,8 @@ func _process(delta):
 		target = null
 		target_reached = false
 		
+	$"Sprite/rubin_eyes".visible = served
+		
 func should_wait():
 	return randf() < probability
 

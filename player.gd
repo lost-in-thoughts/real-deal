@@ -24,7 +24,6 @@ func _process(delta):
 	var dir = Vector2(horizontal, vertical) * diagonal_scale
 	var vel = dir * speed
 	
-	print(dir)
 	# juice
 	if !in_business and dir.length() > 0.5:
 		time_elapsed += delta
