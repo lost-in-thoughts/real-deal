@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://street.png" type="Texture" id=2]
-[ext_resource path="res://font/street cred.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://hud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://customer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player.tscn" type="PackedScene" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-size = 42
-font_data = ExtResource( 3 )
 
 [node name="level0" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,35 +14,20 @@ texture = ExtResource( 2 )
 offset = Vector2( 512, 256 )
 region_rect = Rect2( 1024, 512, 0, 0 )
 
-[node name="player" parent="." instance=ExtResource( 5 )]
+[node name="YSort" type="YSort" parent="."]
 
-[node name="customer" parent="." instance=ExtResource( 4 )]
+[node name="player" parent="YSort" instance=ExtResource( 5 )]
 
-[node name="customer2" parent="." instance=ExtResource( 4 )]
+[node name="customer" parent="YSort" instance=ExtResource( 4 )]
+
+[node name="customer2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 89, 120 )
-
-[node name="customer3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 629.74, 135.462 )
-
-[node name="customer4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 909.74, 375.462 )
 is_interested = false
 
-[node name="hud" type="Node2D" parent="."]
-position = Vector2( 866.932, 7.13524 )
+[node name="customer3" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 629.74, 135.462 )
 
-[node name="Label" type="Label" parent="hud"]
-margin_left = -48.7576
-margin_top = -15.4597
-margin_right = 151.242
-margin_bottom = 84.5403
-custom_fonts/font = SubResource( 1 )
-text = "5"
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="customer4" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 909.74, 375.462 )
 
-[node name="Sprite" type="Sprite" parent="hud"]
+[node name="hud" parent="." instance=ExtResource( 3 )]
