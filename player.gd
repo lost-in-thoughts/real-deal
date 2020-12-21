@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var coin_anim = preload("res://CoinAnimation.tscn")
+
 var in_business = false
 var active_customer = null
 var time_elapsed = 0
@@ -24,7 +26,6 @@ func _process(delta):
 	var dir = Vector2(horizontal, vertical) * diagonal_scale
 	var vel = dir * speed
 	
-	print(dir)
 	# juice
 	if !in_business and dir.length() > 0.5:
 		time_elapsed += delta
@@ -63,6 +64,10 @@ func stop_business():
 	active_customer.stop_business()
 	active_customer = null
 	$business_indicator.visible = false
+	var anim = coin_anim.instance()
+	$"/root".add_child(anim)
+	anim.spawn(position + Vector2(0, -48))
+	
 
 func cancel_business():
 	in_business = false

@@ -5,11 +5,13 @@ var target = null
 var time_elapsed = 0
 var time_elapsed_chaise = 0
 var max_chaise_time = 5
+var time_since_start = 0
 
 func _ready():
 	$"../..".add_officer(self)
 	
 func _process(delta):
+	time_since_start += delta
 	var player = $"../..".player
 	if player:
 		if $"area".overlaps_area(player.get_node("area")):
@@ -35,6 +37,14 @@ func _process(delta):
 	else:
 		time_elapsed = 0
 		$Sprite.position.y = 0
+	
+	if chaising:
+		if sin(time_since_start) > 0:
+			$"../../hud/ColorRect".color = Color(1, 0, 0, 0.2)
+		else:
+			$"../../hud/ColorRect".color = Color(0, 0, 1, 0.2)
+	else:
+		$"../../hud/ColorRect".color = Color(0, 0, 0, 0.0)
 
 func chaise():
 	var player = $"../..".player
