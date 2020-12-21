@@ -37,14 +37,6 @@ func _process(delta):
 	else:
 		time_elapsed = 0
 		$Sprite.position.y = 0
-	
-	if chaising:
-		if sin(time_since_start * 3) > 0:
-			$"../../hud/ColorRect".color = Color(1, 0, 0, 0.15)
-		else:
-			$"../../hud/ColorRect".color = Color(0, 0, 1, 0.15)
-	else:
-		$"../../hud/ColorRect".color = Color(0, 0, 0, 0.0)
 
 func chaise():
 	var player = $"../..".player
@@ -66,7 +58,9 @@ func idle():
 func start_chaising():
 	$chase_indicator.visible = true
 	chaising = true
+	$"../../hud".sirene += 1
 
 func stop_chaising():
 	$chase_indicator.visible = false
 	chaising = false
+	$"../../hud".sirene -= 1

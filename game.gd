@@ -3,8 +3,14 @@ extends Node2D
 var customers = []
 var officers = []
 var player = null
+var timer
 
 func _ready():
+	timer = Timer.new()
+	timer.wait_time = 2
+	timer.one_shot = true
+	add_child(timer)
+	timer.connect("timeout", self, "run_win")
 	randomize()
 	pass
 
@@ -26,6 +32,10 @@ func loose():
 
 func win():
 	GameState.win = true
+	if timer.is_stopped():
+		timer.start()
+
+func run_win():
 	GameState.increase_level()
 	get_tree().change_scene("res://menu.tscn")
 
