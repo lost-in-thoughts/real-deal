@@ -21,16 +21,19 @@ offset = Vector2( 512, 256 )
 region_rect = Rect2( 1024, 512, 0, 0 )
 
 [node name="space" type="Sprite" parent="."]
+modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
 position = Vector2( 966.196, 468.581 )
 scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 7 )
 
 [node name="wasd" type="Sprite" parent="."]
+modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
 position = Vector2( 856.167, 440.23 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
+modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
 margin_left = 924.318
 margin_top = 490.836
 margin_right = 1018.32
@@ -44,6 +47,7 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
+modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
 margin_left = 808.612
 margin_top = 490.765
 margin_right = 902.612
